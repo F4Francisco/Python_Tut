@@ -47,7 +47,7 @@ for i in range (5):
 
 for i in num_list:
     print(i)
-'''
+
 #**Bubble Sort**#
 #1.An outer loop decreases in size each time
 #2.The goal is to have the largest number at the end of the list when the outer loop completes 1 cycle
@@ -113,3 +113,79 @@ for k in num_list:
     print(k,end=",")
 
 print()
+
+#More List functions (Sort, Reverse, Insert, Remove, Pop)
+
+num_List = []
+for i in range (5):
+    num_List.append(random.randrange(1,10))
+
+num_List.sort()
+
+num_List.reverse()
+
+#Inserting using indexs
+num_List.insert(5,10)
+
+num_List.remove(10)
+
+num_List.pop(2)
+
+for k in num_List:
+    print(k, end= " ,")
+print()
+
+#List comprehasion - preform an action on each item in the list
+
+#Static list
+evenList = [i * 2 for i in range(10)]
+
+for i in evenList:
+    print(i)
+
+numList=[1,2,3,4,5]
+
+listOfValues = [[math.pow(m, 2), math.pow(m,3), math.pow(m, 4)]
+                for m in numList]
+
+for i in listOfValues:
+    print(i)
+print()
+#Multi Dimenonal List
+multiDlist = [[0] * 10 for i in range(10)]
+
+multiDlist[0][1] =10
+
+print(multiDlist[0][1])
+
+
+listTable = [[0] * 4 for i in range(4)]
+
+#Changes the first value
+for i in range(4):
+    #To change second value
+    for j in range(4):
+        listTable[i][j] = "{}   {}".format(i, j)
+
+for i in range(4):
+    for j in range(4):
+        print(listTable[i][j], end = "  ")
+    print()
+'''
+
+#Multiplication Table: Problem
+
+#Create the multidimensional list
+mutlTable = [[0] * 10 for i in range(10)]
+
+# Increment with outer for
+for i in range(1, 10):
+    # Increment with inner for loop
+    for j in range(1, 10):
+        # Assign the value to the cell
+        mutlTable[i][j] = i * j
+# Output the data
+for i in range (1, 10):
+    for j in range (1, 10):
+        print(mutlTable[i][j], end = " , ")
+    print()
